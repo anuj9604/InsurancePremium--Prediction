@@ -55,4 +55,9 @@
         docker stop <container_id>
         -------
     
-    Pushing changes to github.
+        d. Pushing changes to github.
+
+        e. Create a .github/workflows directory and add main.yaml file containing the continous deployement instructions.
+
+        f. Push changes to github.
+
