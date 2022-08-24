@@ -61,3 +61,8 @@
 
         f. Push changes to github.
 
+    6. Creating a setup.py file, to install requiremtns and other packages automatically. And, to run the setup file use,
+
+    python setup.py install
+
+    
