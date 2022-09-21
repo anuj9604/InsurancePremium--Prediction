@@ -65,4 +65,13 @@
 
     python setup.py install
 
-    
+    7. Created basic structure for "premium" package. Meaning, we creat "logger", "exception", "component", "config", "pipeline" and "entity" packages inside "premium" package.
+
+###  Let's code
+
+    1. Starting with "logger" module, we write loggin configuration into its __init__.py file.
+
+    2. Now we design our "exception" module
+
+    3. Now under our Enity directory, we'll create config_entity.py in which we design the structure of what details we would require for our configuration to work, which pipeline file will use.
+
