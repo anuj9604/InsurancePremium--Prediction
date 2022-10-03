@@ -3,14 +3,17 @@ from typing import List
 
 PROJECT_NAME="Premium-Predictor"
 VERSION="0.0.1"
-AUTHOR="Anuj"
+AUTHOR="Anuj K."
 DESCRIPTION="This is an app for predicting insurance premium"
-PACKAGES=["premium"]
 REQUIREMENT_FILE_NAME="requirements.txt"
 
 def get_requirements_list()->List[str]:
     with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        return requirement_file.readlines().remove("-e .")
+        requirement_list = requirement_file.readlines()
+        requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+        if '-e .' in requirement_list:
+            requirement_list.remove('-e .')
+        return requirement_list
 
 
 setup(

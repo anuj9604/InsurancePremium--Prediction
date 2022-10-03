@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Other
+demo.py
+artifacts/
+premium_log/
+

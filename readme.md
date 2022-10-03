@@ -73,5 +73,19 @@
 
     2. Now we design our "exception" module
 
-    3. Now under our Enity directory, we'll create config_entity.py in which we design the structure of what details we would require for our configuration to work, which pipeline file will use.
+    3. Now under our Enity directory, we'll create config_entity.py which contains namedtuple entries, whose purpose is to have dictionary type objects which have parameters that are essesntial for each stage of our ML App.
+
+    4. Created config.yaml in root/config directory. It contains all the actual values for the configuration of our App pipeline.
+
+    5. Create configuration.py inside root/premium/config which contains get_ methods, that help load the values inside config.yaml into namedtuples we created inside config_entity.py.
+
+    6. Create a util.py within root/premium/util. Which will contain utility functions to be used inside various modules of the project.
+
+    7. Created premium/constant under which we saved all the constant values that helps to connect with config.yaml.
+
+    8. We design get_training_pipeline_config method inside root/premium/config/configuration.py. Which is returning us an instance of TrainingPipelineConfig namedtuple. This is to basically give us actual config 
+
+    9. Similar to step 8, we create get_ methods inside configuration.py for all the other stages. And update constant file as required.
+    
+    10. We create premium/component inside which we have a .py for each stage of our App. And here is where we will write actual working of each stage.
 
