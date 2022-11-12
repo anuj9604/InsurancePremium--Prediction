@@ -38,6 +38,10 @@ DATA_TRANSFORMATION_TRAIN_DIR="transformed_train_dir"
 DATA_TRANSFORMATION_TEST_DIR="transformed_test_dir"
 DATA_TRANSFORMATION_PREPROCESSING_DIR_KEY="preprocessing_dir"
 DATA_TRANSFORMATION_PREPROCESSED_OBJECT_FILE_NAME_KEY="preprocessed_object_file_name"
+TRIVIAL_COLUMNS="trivial_columns"
+INPUT_COLUMNS="input_columns"
+CATEGORICAL_COLUMNS="categorical_columns"
+TARGET_COLUMNS="target_column"
 
 #Model Trainer Related Constants
 MODEL_TRAINER_CONFIG_KEY="model_trainer_config"

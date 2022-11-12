@@ -1,4 +1,4 @@
-# Machine learning Project for Supply Chain
+# Machine learning Project for Insurance Premium Prediction
 
 ## Chain of events
 
@@ -88,4 +88,10 @@
     9. Similar to step 8, we create get_ methods inside configuration.py for all the other stages. And update constant file as required.
     
     10. We create premium/component inside which we have a .py for each stage of our App. And here is where we will write actual working of each stage.
+
+    11. Now with data ingestion completed, we link the data_ingestion.py in premium/component with pipeline.py inside premium/pipeline. And then test it in demo.py which would be similar to app.py
+
+    12. Then we move onto our data validation stage inside premium/component.
+
+    13. Then we move onto our data transformation stage inside premium/component
 

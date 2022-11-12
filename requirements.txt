@@ -7,5 +7,7 @@ PyYAML
 dill 
 matplotlib
 PyYAML
+evidently
 requests
+dill
 -e .

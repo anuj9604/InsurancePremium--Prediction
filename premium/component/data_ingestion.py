@@ -13,7 +13,7 @@ class DataIngestion:
 
     def __init__(self, data_ingestion_config:DataIngestionConfig):
         try:
-            logging.info(f'{"-"*20} Data Ingestion log started {"-"*20}')
+            logging.info(f'{"="*20} Data Ingestion log started {"="*20}')
             self.data_ingestion_config=data_ingestion_config
 
         except Exception as e:
@@ -24,9 +24,6 @@ class DataIngestion:
             csv_url=self.data_ingestion_config.dataset_download_url
 
             csv_data_dir=self.data_ingestion_config.csv_download_dir
-
-            """if os.path.exists(csv_data_dir):
-                os.remove(csv_data_dir)"""
 
             os.makedirs(csv_data_dir, exist_ok=True)
 
@@ -87,8 +84,8 @@ class DataIngestion:
                 os.makedirs(self.data_ingestion_config.ingested_test_dir, exist_ok=True)
                 strat_test_set.to_csv(test_file_path)
 
-            data_ingestion_artifact=DataIngestionArtifact(train_file_path=train_file_path, test_file_path=test_file_path, is_ingested=True, message="Data Ingested Successfully")
-
+            data_ingestion_artifact=DataIngestionArtifact(csv_file_path=csv_file_path, train_file_path=train_file_path, test_file_path=test_file_path, is_ingested=True, message="Data Ingested Successfully")
+            logging.info("Data Ingestion Completed successfully")
             return data_ingestion_artifact
 
         except Exception as e:
@@ -103,4 +100,4 @@ class DataIngestion:
             raise PremiumException(e,sys) from e
 
     def __del__(self):
-        logging.info(f"{'='*20}Data Ingestion stage completed.{'='*20} \n\n")
+        logging.info(f"{'='*20}Data Ingestion log complete.{'='*20} \n\n")

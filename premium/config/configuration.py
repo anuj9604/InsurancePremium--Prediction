@@ -34,7 +34,7 @@ class Configuration:
         except Exception as e:
             raise PremiumException(e,sys) from e
 
-    def data_validation_config(self)->DataValidationConfig:
+    def get_data_validation_config(self)->DataValidationConfig:
         try:
             artifact_dir=self.training_pipeline_config.artifact_dir
             data_validation_artifact_dir=os.path.join(artifact_dir, DATA_VALIDATION_ARTIFACT_DIR_NAME, self.timestamp)
@@ -50,11 +50,11 @@ class Configuration:
             return data_validation_config
 
         except Exception as e:
-            raise PremiumException from e
+            raise PremiumException(e,sys) from e
 
     def get_data_transformation_config(self)->DataTransformationConfig:
         try:
-            artifact_dir=self.get_training_pipeline_config().artifact_dir
+            artifact_dir=self.training_pipeline_config.artifact_dir
             data_transformation_artifact_dir=os.path.join(artifact_dir, DATA_TRANSFORMATION_ARTIFACT_DIR_NAME, self.timestamp)
 
             data_transformation_config=self.config_info[DATA_TRANSFORMATION_CONFIG_KEY]
@@ -75,7 +75,7 @@ class Configuration:
 
     def get_model_trainer_config(self)->ModelTrainerConfig:
         try:
-            artifact_dir=self.get_training_pipeline_config().artifact_dir
+            artifact_dir=self.get_training_pipeline_config.artifact_dir
             model_trainer_config=self.config_info[MODEL_TRAINER_CONFIG_KEY]
             model_trainer_artifact_dir=os.path.join(artifact_dir, MODEL_TRAINER_ARTIFACT_DIR_NAME, self.timestamp)
 
@@ -93,7 +93,7 @@ class Configuration:
 
     def get_model_evaluation_config(self)->ModelEvaluationConfig:
         try:
-            artifact_dir=self.get_training_pipeline_config().artifact_dir
+            artifact_dir=self.training_pipeline_config.artifact_dir
             model_evaluation_config=self.config_info[MODEL_EVALUATION_CONFIG_KEY]
             model_evaluation_artifact_dir=os.path.join(artifact_dir, MODEL_EVALUATION_ARTIFACT_DIR_NAME, self.timestamp)
 
@@ -130,7 +130,7 @@ class Configuration:
             training_pipeline_config[TRAINING_PIPELINE_ARTIFACT_DIR_KEY]
             )
             training_pipeline_config=TrainingPipelineConfig(artifact_dir=artifact_dir)
-            logging.info(f'Training pipeline config: {training_pipeline_config}')
+            logging.info(f'Training pipeline config: {training_pipeline_config}\n')
             return training_pipeline_config
         except Exception as e:
             raise PremiumException(e,sys) from e

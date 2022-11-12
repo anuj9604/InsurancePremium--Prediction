@@ -6,10 +6,11 @@ class PremiumException(Exception):
     @staticmethod
     def get_detailed_error_message(error_message:Exception, error_details:sys)->str:
         _,_,exec_tb=error_details.exc_info()
-        line_number=exec_tb.tb_frame.f_lineno
+        exception_line_number=exec_tb.tb_frame.f_lineno
+        try_line_number=exec_tb.tb_lineno
         file_name=exec_tb.tb_frame.f_code.co_filename
 
-        error_message=f"Error occured in script [{file_name}] at LINE NUMBER: [{line_number}] ERROR MESSAGE: [{error_message}]"
+        error_message=f"Error occured in script [{file_name}] \n at try block LINE NUMBER: [{try_line_number}] and exception block LINE NUMBER:[{exception_line_number}] \n ERROR MESSAGE: [{error_message}]"
 
         return error_message
 

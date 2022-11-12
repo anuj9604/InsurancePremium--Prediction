@@ -1,0 +1,26 @@
+columns: 
+    age: int64
+    sex: object
+    bmi: float64
+    children: int64
+    smoker: object
+    region: object
+    expenses: float64
+
+input_columns:
+    - age
+    - sex
+    - bmi
+    - children
+    - smoker
+    - region
+
+target_column: expenses
+
+trivial_columns:
+    - sex
+    - children
+    - region
+
+categorical_columns:
+    - smoker
