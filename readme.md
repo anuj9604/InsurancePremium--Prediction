@@ -93,5 +93,5 @@
 
     12. Then we move onto our data validation stage inside premium/component.
 
-    13. Then we move onto our data transformation stage inside premium/component
+    13. Then we move onto our data transformation stage inside premium/component.
 

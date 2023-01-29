@@ -3,7 +3,7 @@ training_pipeline_config:
   artifact_dir: artifacts
 
 data_ingestion_config:
-  dataset_download_url: https://raw.githubusercontent.com/anuj9604/InsurancePremium--Prediction/main/Dataset/insurance.csv
+  dataset_download_url: https://github.com/anuj9604/InsurancePremium--Prediction/blob/main/dataset/insurance.csv
   csv_download_dir: csv_data
   ingested_dir: ingested_data
   ingested_train_dir: train
